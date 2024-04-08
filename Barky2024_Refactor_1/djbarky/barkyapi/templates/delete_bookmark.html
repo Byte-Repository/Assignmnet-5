@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Bookmark</title>
+</head>
+<body>
+    <h1>Delete Bookmark</h1>
+    <p>Are you sure you want to delete "{{ bookmark.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+</body>
+</html>
