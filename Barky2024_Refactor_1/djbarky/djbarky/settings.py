@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "barkyapi.apps.BarkyapiConfig",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
+
+# settings.py
+
+# Celery configuration
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+
