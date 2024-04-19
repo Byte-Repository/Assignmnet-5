@@ -8,7 +8,7 @@ from datetime import datetime
 
 import requests
 
-from .database import DatabaseManager
+from barkyapi.database import DatabaseManager
 
 # module scope
 db = DatabaseManager("bookmarks.db")

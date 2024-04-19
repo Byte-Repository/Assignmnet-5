@@ -1,5 +1,5 @@
 from .models import Bookmark, Category
-from Barky2024_Refactor_1.djbarky.barkyapi.patterns import UnitOfWork
+from .patterns import UnitOfWork
 
 def create_bookmark(title, url, category_id, notes=None):
     """

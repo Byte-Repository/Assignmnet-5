@@ -42,3 +42,10 @@ def delete_bookmark(request, pk):
         delete_bookmark_async.delay(pk)
         return redirect('bookmark_list')
     return render(request, 'delete_bookmark.html', {'bookmark': bookmark})
+
+from utils.message_bus import message_bus
+
+def bookmark_list(request):
+    # Dispatch the 'get_all_bookmarks' command to the message bus
+    bookmarks = message_bus.dispatch_command('get_all_bookmarks')
+    return render(request, 'bookmark_list.html', {'bookmarks': bookmarks})
